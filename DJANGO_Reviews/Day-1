@@ -1,0 +1,175 @@
+Day 1
+
+
+## SETTING UP DEVELOPMENT ENVIRONMENT AND INSTALLING DJANGO
+
+1. Virtual ENVIRONMENT 
+2. Installing django 
+3. Tree command
+4. Django-admin commnand
+
+
+
+Django is a high-level Python web framework that follows the model-view-controller (MVC) architectural pattern. It provides a set of tools and libraries that help developers build web applications quickly and efficiently. Django is designed to promote clean and pragmatic design, encouraging the use of reusable components and adhering to the DRY (Don't Repeat Yourself) principle.
+
+  #  Key features of Django include:
+
+1. Object-Relational Mapping (ORM): Django provides an abstraction layer for working with databases, allowing developers to interact with databases using Python objects. This simplifies database operations and makes the code more portable across different database systems.
+
+2. URL Routing: Django's URL routing system allows developers to define URL patterns and map them to corresponding view functions or classes. This makes it easy to organize and handle different URLs within the application.
+
+3. Template Engine: Django includes a powerful template engine that separates the presentation logic from the business logic. It allows developers to define dynamic HTML templates and easily render them with data from the application.
+
+4. Forms: Django provides a forms library that simplifies the handling of HTML forms. It includes form validation, input sanitization, and data binding capabilities, making it easier to build and process user input.
+
+5. Authentication and Authorization: Django comes with built-in user authentication and authorization mechanisms. It provides a secure way to manage user accounts, handle user registration and login, and define access control permissions.
+
+6. Admin Interface: Django offers an automatic admin interface that allows developers to quickly create an administrative panel for managing application data. It provides an intuitive interface for performing common CRUD (Create, Read, Update, Delete) operations on database models.
+
+7. Security: Django includes various security features, such as protection against common web vulnerabilities like cross-site scripting (XSS), cross-site request forgery (CSRF), and SQL injection. It also supports secure password hashing and encryption.
+
+8. Internationalization and Localization: Django supports multiple languages and provides tools for internationalization and localization. It makes it easier to create applications that can be translated into different languages and adapt to regional settings.
+
+Django follows the "batteries included" philosophy, which means it provides a comprehensive set of tools and functionalities out of the box. It has a large and active community that contributes to its development and offers numerous third-party packages and extensions. Django is widely used for developing all kinds of web applications, from simple websites to complex web systems.
+
+## CREATING A VIRTUAL ENVIRONMENT
+To create a virtual environment in Linux, you can use the built-in `venv` module, which comes with Python. Here's a step-by-step guide on how to create a virtual environment in Linux:
+
+1. Open your terminal.
+
+2. Navigate to the directory where you want to create the virtual environment. For example, if you want to create it in your home directory, use the following command:
+   
+   cd ~
+   
+
+3. Run the following command to create a new virtual environment. Replace `myenv` with the name you want to give to your virtual environment:
+   
+   python3 -m venv myenv
+   
+
+4. Wait for the command to complete. It will create a new directory named `myenv` (or the name you specified) in the current directory. This directory will contain the virtual environment.
+
+5. Activate the virtual environment by running the activation script. Use the following command:
+   
+   source myenv/bin/activate
+   
+
+6. Once the virtual environment is activated, you will notice that your terminal prompt will change, indicating that you are now working within the virtual environment.
+
+   Example prompt:
+   
+   (myenv) user@hostname:~/$
+   
+
+7. You can now install Python packages and run Python scripts within the virtual environment, and they will be isolated from the system-level Python installation.
+
+8. To deactivate the virtual environment and return to the system-level Python environment, simply run the following command:
+   
+   deactivate
+   
+
+Creating a virtual environment allows you to install and manage dependencies specific to your project without interfering with other Python projects or the system-wide Python installation. It helps keep your project's dependencies organized and isolated.
+
+
+
+## CHECKING FOR THE VERSION OF THE INSTALLED DJANGO
+
+python -m django --version
+
+
+
+## django-admin Command lists and how to apply them 
+
+
+The `django-admin` command is a command-line tool that comes with Django and provides various utilities for managing Django projects. It allows you to perform tasks such as creating a new Django project, creating apps within a project, running development servers, executing management commands, and more.
+
+Here are some commonly used commands with `django-admin`:
+
+1. Creating a new Django project:
+   
+   django-admin startproject projectname
+   
+   This command creates a new Django project with the specified `projectname`. It will generate the necessary files and directories to get started with a basic Django project structure.
+
+2. Creating a new Django app within a project:
+   
+   django-admin startapp appname
+   
+   This command creates a new Django app with the specified `appname` within the current project. It will generate the files and directories required for a Django app, including models, views, and templates.
+
+3. Running the development server:
+   
+   django-admin runserver
+   
+   This command starts the Django development server, allowing you to run your Django project locally for testing and development purposes. By default, it runs on `http://localhost:8000/`.
+
+4. Running management commands:
+   
+   django-admin <command>
+   
+   Django provides various management commands that you can execute using `django-admin`. For example, you can run database migrations, create a superuser, collect static files, run tests, etc. Use `django-admin help` to see a list of available management commands.
+
+   Example:
+   
+   django-admin makemigrations   # Create database migrations
+   django-admin migrate          # Apply database migrations
+   django-admin createsuperuser  # Create a superuser for the admin interface
+   django-admin collectstatic    # Collect static files
+   
+
+These are just a few examples of the commands you can use with `django-admin`. It's a versatile tool that provides many more functionalities for managing Django projects and applications from the command line. You can use `django-admin help` to get more information about all the available commands and their options.
+
+
+## command lists and usages
+
+The `django-admin` command provides a variety of commands for managing Django projects and applications. Here is a list of some commonly used commands:
+
+
+django-admin check                # Checks the entire Django project for errors
+django-admin compilemessages      # Compiles .po files to .mo files for translations
+django-admin createsuperuser      # Creates a superuser for the admin interface
+django-admin dbshell              # Runs the database shell (CLI) for the default database
+django-admin diffsettings         # Displays differences between the current settings.py and Django's default settings
+django-admin dumpdata             # Dumps data from the database into fixtures (e.g., JSON, XML)
+django-admin flush                # Deletes all data from the database and re-executes any post-synchronization handlers
+django-admin inspectdb            # Introspects the database and generates models.py code based on existing database tables
+django-admin loaddata             # Loads data from fixtures into the database
+django-admin makemessages         # Creates or updates .po files for translations
+django-admin makemigrations       # Creates new database migrations based on the changes in the models.py
+django-admin migrate              # Applies database migrations to the database
+django-admin runserver            # Starts the development server for the project
+django-admin sendtestemail        # Sends a test email to the email addresses specified in the settings
+django-admin shell                # Runs a Python interactive shell with Django pre-loaded
+django-admin showmigrations       # Shows the list of migrations and their status
+django-admin startapp             # Creates a new Django app within the project
+django-admin startproject         # Creates a new Django project
+django-admin test                 # Runs tests for all the installed Django apps
+django-admin testserver           # Runs a development server with data from fixtures for testing
+django-admin collectstatic        # Collects static files from all apps and places them in the static file directory
+django-admin runscript            # Executes a custom script located in the scripts directory of a Django app
+
+
+Please note that the available commands may vary depending on the version of Django you are using and any custom management commands added by your project or installed apps.
+
+You can get more detailed information about each command and their options by running `django-admin help <command>` replacing `<command>` with the specific command you want to learn more about.
+
+
+
+
+##    GOALS ACCOMPLISHED
+
++ I did applied every concepts here by creating my first virtual environment and reasons for this is to combacts conflicting dependencies with the general python installed. so creating python virtual environment and installing django afresh there helps all it's dependencies to work without conflits.
++ installed django using 'pip' command in python
+        pip install django 
+        python3 -m install django
++ created my first project using django-admin command for starting projects;
+        django-admin startproject cogito_ergo_sum
++ created my first web application blog
+        django-admin startapp blog
+
++ Ran the tree command to see all installed apps and packages;
+
+
+
+### Worthwhile
+
