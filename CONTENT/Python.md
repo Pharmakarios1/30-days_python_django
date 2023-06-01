@@ -1,5 +1,5 @@
 
-![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGaVaKNhalSy2XqyZfJ9Wo9a3XR-rTf6aiNfyrf2owwCsbofxz1wb_Tz4G7sc5SUh84gg&usqp=CAU)
+![](https://www.shutterstock.com/image-vector/python-coding-language-sign-on-260nw-1389877574.jpg)
 
 # CHATGPT SUGGESTION
 Sure! Here's a suggested structure for a 30-day topical study on Python:
@@ -14,6 +14,13 @@ Sure! Here's a suggested structure for a 30-day topical study on Python:
 - Day 5: Dictionaries and sets in Python.
 - Day 6: Working with strings in Python.
 - Day 7: List comprehensions and advanced data manipulation techniques.
+
+### main data structures in Programming Review in python
++ Arrays
++ Linked lists
++ Stacks and queues
++ hash table
++ binary trees and graph
 
 **Day 8-10: File Handling**
 - Day 8: Reading from and writing to files in Python.
