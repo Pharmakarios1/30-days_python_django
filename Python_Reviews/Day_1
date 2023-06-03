@@ -1,0 +1,67 @@
+Python already comes pre-installed in my Ubuntu 22.04
+
+checked version running with:   python3 --version.
+
+##TYPICALLY DAY 1 TO 3. 
+
+
+In Python, the syntax refers to the rules and structure that govern the writing of valid Python code. Here's an overview of basic syntax, data types, variables, and operators in Python:
+
+1. Syntax:
+   - Python code is written in plain text files with a `.py` extension.
+   - Statements are usually written one per line.
+   - Blocks of code are defined by indentation (typically four spaces or a tab).
+
+2. Data Types:
+   - Python has several built-in data types, including:
+     - Numeric types: int, float, complex
+     - Sequence types: str, list, tuple
+     - Mapping type: dict
+     - Set types: set, frozenset
+     - Boolean type: bool
+
+3. Variables:
+   - Variables are used to store values.
+   - You can assign a value to a variable using the assignment operator (=).
+   - Variables in Python are dynamically typed, meaning you don't need to declare their type explicitly.
+
+4. Operators:
+   - Arithmetic Operators:
+     - Addition: +
+     - Subtraction: -
+     - Multiplication: *
+     - Division: /
+     - Modulo (remainder): %
+     - Exponentiation: **
+
+   - Assignment Operators:
+     - Assign: =
+     - Add and assign: +=
+     - Subtract and assign: -=
+     - Multiply and assign: *=
+     - Divide and assign: /=
+     - Modulo and assign: %=
+
+   - Comparison Operators:
+     - Equal to: ==
+     - Not equal to: !=
+     - Greater than: >
+     - Less than: <
+     - Greater than or equal to: >=
+     - Less than or equal to: <=
+
+   - Logical Operators:
+     - Logical AND: and
+     - Logical OR: or
+     - Logical NOT: not
+
+   - Membership Operators:
+     - In: checks if a value exists in a sequence
+     - Not in: checks if a value does not exist in a sequence
+
+   - Identity Operators:
+     - is: checks if two variables refer to the same object
+     - is not: checks if two variables do not refer to the same object
+
+This is just a basic overview of syntax, data types, variables, and operators in Python. 
+There's much more to learn about each of these topics, including more advanced concepts and features.
