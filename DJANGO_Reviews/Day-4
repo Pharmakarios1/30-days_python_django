@@ -1,0 +1,196 @@
+## DAY 4
+# CREATING MODELS
+# RUNNING MIGRATIONS
+# INTERACTING WITH DATABASES
+
+To create models in Django, you need to follow these steps:
+
+Step 1: Define a Django app
+If you haven't already created a Django app, you can do so by running the following command in your terminal:
+
+```
+python manage.py startapp myapp
+```
+
+This will create a new directory called `myapp` with the basic structure of a Django app.
+
+Step 2: Define models
+Open the `models.py` file inside your `myapp` directory. This is where you define your models. A model is a Python class that represents a database table.
+
+Here's an example of a simple model that represents a blog post:
+
+```python
+from django.db import models
+
+class Post(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    pub_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+```
+
+In this example, we define a `Post` model that has three fields: `title`, `content`, and `pub_date`. The `CharField` represents a string field, and the `TextField` represents a large text field. The `DateTimeField` represents a date and time field. The `auto_now_add=True` parameter automatically sets the current date and time when a new post is created.
+
+The `__str__` method defines a human-readable string representation of the model. In this case, it returns the title of the post.
+
+Step 3: Create database tables
+To create the corresponding database tables for your models, you need to run the following command in your terminal:
+
+```
+python manage.py makemigrations
+```
+
+This will generate a set of migration files based on your models.
+
+Next, apply the migrations by running the following command:
+
+```
+python manage.py migrate
+```
+
+This will create the necessary database tables based on the migrations.
+
+Step 4: Use the models in your code
+Now that you have defined your models, you can use them in your code. For example, you can create a new post like this:
+
+```python
+from myapp.models import Post
+
+post = Post(title="My First Post", content="This is the content of my first post")
+post.save()
+```
+
+This creates a new instance of the `Post` model, sets the `title` and `content` fields, and then saves it to the database.
+
+You can also retrieve and manipulate existing records using Django's query API.
+
+That's it! You have now created models in Django and can use them to interact with your database.
+
+
+# Running Migrations
+
+To run migrations in Django, you need to follow these steps:
+
+Step 1: Make sure your models are defined
+Ensure that you have defined your models correctly in the `models.py` file of your Django app. Each model represents a database table.
+
+Step 2: Generate migrations
+To generate the migration files based on your models, run the following command in your terminal:
+
+```
+python manage.py makemigrations
+```
+
+This command analyzes your models and creates migration files that describe the changes to be made in the database schema.
+
+Step 3: Review the generated migrations
+After running the `makemigrations` command, you can check the generated migration files. These files are usually stored in a `migrations` directory within your app.
+
+Open the generated migration files to review the operations being performed, such as creating or modifying database tables and fields.
+
+Step 4: Apply migrations
+To apply the migrations and update your database schema, run the following command:
+
+```
+python manage.py migrate
+```
+
+This command will execute the migration files that you generated in the previous step. It will create or modify the corresponding database tables and fields based on the defined models.
+
+Step 5: Verify migration status
+You can use the following command to check the migration status:
+
+```
+python manage.py showmigrations
+```
+
+This command displays a list of all the migration files and their status (whether they have been applied or not).
+
+Step 6: Rollback migrations (optional)
+If you need to roll back a migration and revert the changes made to the database schema, you can use the `migrate` command with a specific migration name or version.
+
+For example, to roll back to a specific migration named `0002_migration_name`, run the following command:
+
+```
+python manage.py migrate myapp 0002_migration_name
+```
+
+This command will undo the migration and revert the changes made by that migration. You can specify any earlier migration name or version to roll back to that particular state.
+
+That's it! You have now learned how to run migrations in Django. It allows you to manage and update your database schema as you modify your models.
+
+
+
+# Interacting with databases 
+
+To interact with databases in Django, you can use Django's built-in Object-Relational Mapping (ORM) to perform database operations. The ORM allows you to create, retrieve, update, and delete records in the database using Python code. Here's an example of how to interact with databases in Django:
+
+Step 1: Define models
+First, define your models in the `models.py` file of your Django app. Each model represents a database table.
+
+```python
+from django.db import models
+
+class Book(models.Model):
+    title = models.CharField(max_length=200)
+    author = models.CharField(max_length=100)
+    publication_date = models.DateField()
+
+    def __str__(self):
+        return self.title
+```
+
+In this example, we define a `Book` model with fields for the title, author, and publication date.
+
+Step 2: Create records
+To create a new record in the database, instantiate a model object, set its attributes, and save it.
+
+```python
+book = Book(title='My Book', author='John Doe', publication_date='2023-06-03')
+book.save()
+```
+
+This code creates a new `Book` instance, sets its attributes, and saves it to the database.
+
+Step 3: Retrieve records
+To retrieve records from the database, you can use Django's query API. Here are some examples:
+
+- Retrieve all books:
+  ```python
+  books = Book.objects.all()
+  ```
+
+- Retrieve books with a specific condition:
+  ```python
+  books = Book.objects.filter(author='John Doe')
+  ```
+
+- Retrieve a single book by its primary key (ID):
+  ```python
+  book = Book.objects.get(pk=1)
+  ```
+
+Step 4: Update records
+To update a record, retrieve it from the database, modify its attributes, and save it.
+
+```python
+book = Book.objects.get(pk=1)
+book.title = 'New Title'
+book.save()
+```
+
+This code retrieves a book with the primary key (ID) of 1, updates its title, and saves the changes.
+
+Step 5: Delete records
+To delete a record, retrieve it from the database and call the `delete()` method.
+
+```python
+book = Book.objects.get(pk=1)
+book.delete()
+```
+
+This code retrieves a book with the primary key (ID) of 1 and deletes it from the database.
+
+That's it! You now have an idea of how to interact with databases in Django using the ORM. Django's ORM provides a powerful and convenient way to perform database operations without writing raw SQL queries.
